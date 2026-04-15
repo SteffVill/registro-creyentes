@@ -6,6 +6,7 @@ const CreyenteList = ({ registros, prepararEdicion, eliminarRegistro, busqueda }
       <div key={idx} className="bg-white p-4 rounded-lg shadow border flex justify-between items-center group hover:border-blue-300 transition-all">
         <div>
           <h3 className="font-bold text-blue-900">{reg.nombre}</h3>
+           <h3 className="font-bold text-blue-900">{reg.apellidos}</h3>
           <p className="text-xs text-gray-500 font-medium">Cédula: {reg.cedula || 'N/A'}</p>
         </div>
         <div className="flex gap-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity">

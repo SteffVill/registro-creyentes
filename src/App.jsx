@@ -10,7 +10,7 @@ const App = () => {
   const [editandoIndex, setEditandoIndex] = useState(null);
 
   const getInitialState = () => ({
-    nombre: '', fechaNacimiento: '', cedula: '', estadoCivil: 'Soltero(a)', profesion: '',
+    nombre: '', apellidos: '', fechaNacimiento: '', cedula: '', estadoCivil: 'Soltero(a)', profesion: '',
     telefono: '', correo: '', bautizadoAgua: 'No', bautizadoEspiritu: 'No', dones: '', familia: []
   });
 
@@ -49,14 +49,14 @@ const App = () => {
   };
 
   const filtrados = registros.filter(r => 
-    r.nombre.toLowerCase().includes(busqueda.toLowerCase()) || r.cedula.includes(busqueda)
+    r.nombre.toLowerCase().includes(busqueda.toLowerCase()) || r.apellidos.toLowerCase().includes(busqueda.toLowerCase()) || r.cedula.includes(busqueda)
   );
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
       <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
-        <header className="bg-blue-800 text-white p-6 text-center">
-          <h1 className="text-2xl font-bold uppercase tracking-tighter">Sistema de Registro Parroquial</h1>
+        <header className="bg-amber-100 text-amber-600 p-6 text-center">
+          <h1 className="text-2xl font-bold uppercase tracking-tighter">Registro de nuevos creyentes</h1>
         </header>
 
         <CreyenteForm 
@@ -67,7 +67,7 @@ const App = () => {
 
         <div className="p-6 bg-gray-50 border-t">
           <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
-            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><Users /> Registros</h2>
+            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><Users /> Registrados</h2>
             <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
           </div>
           

@@ -21,11 +21,15 @@ const CreyenteForm = ({ formData, setFormData, guardarRegistro, editandoIndex, s
           <h2 className="text-lg font-bold text-gray-700 uppercase">I. Datos Personales</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="md:col-span-2">
-            <label className="text-sm font-semibold">Nombre Completo</label>
+          <div className="md:col-span-1">
+            <label className="text-sm font-semibold">Nombres</label>
             <input required name="nombre" value={formData.nombre} onChange={handleInputChange} className="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500" />
           </div>
-          <div>
+           <div className="md:col-span-1">
+            <label className="text-sm font-semibold">Apellidos</label>
+            <input required name="apellidos" value={formData.apellidos} onChange={handleInputChange} className="w-full border rounded p-2 focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div className="md:col-span-1">
             <label className="text-sm font-semibold">Cédula</label>
             <input name="cedula" value={formData.cedula} onChange={handleInputChange} className="w-full border rounded p-2" />
           </div>
