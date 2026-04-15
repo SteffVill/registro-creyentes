@@ -55,7 +55,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
       <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
-        <header className="bg-amber-100 text-amber-600 p-6 text-center">
+        <header className="bg-white text-amber-600 p-6 text-center">
           <h1 className="text-2xl font-bold  tracking-tighter">Registro de Nuevos Creyentes</h1>
         </header>
 

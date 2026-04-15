@@ -25,8 +25,8 @@ const CreyenteForm = ({ formData, setFormData, guardarRegistro, editandoIndex, s
     <form onSubmit={guardarRegistro} className="p-6 space-y-8">
       {/* SECCIÓN I: DATOS PERSONALES */}
       <section>
-        <div className="flex items-center gap-2 mb-4 border-b border-amber-500 pb-2">
-          <h2 className="text-lg font-bold text-gray-600 uppercase">👤 I. Datos Personales</h2>
+        <div className="flex items-center gap-2 mb-4 border-b border-amber-500 pb-2 pt-2 bg-amber-100 rounded-2xl">
+          <h2 className="text-lg font-bold text-amber-600 ">👤 I. Datos Personales</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div>
@@ -88,9 +88,9 @@ const CreyenteForm = ({ formData, setFormData, guardarRegistro, editandoIndex, s
 
       {/* SECCIÓN II: CRECIMIENTO */}
       <section className="">
-        <div className="flex items-center gap-2 mb-4 border-b border-amber-500 pb-2">
+        <div className="flex items-center gap-2 mb-4 border-b border-amber-500 pb-2 pt-2 bg-amber-100 rounded-2xl">
           🕊️
-          <h2 className="text-lg font-bold text-gray-600 uppercase">II. Crecimiento Espiritual</h2>
+          <h2 className="text-lg font-bold text-amber-600">II. Crecimiento Espiritual</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>
@@ -131,7 +131,7 @@ const CreyenteForm = ({ formData, setFormData, guardarRegistro, editandoIndex, s
       </section>
 
       {/* BOTONES DE ACCIÓN */}
-      <div className="flex justify-end gap-3 pt-4">
+      <div className="flex justify-start gap-3 pt-4">
         {editandoIndex !== null && (
           <button type="button" onClick={() => {setEditandoIndex(null); setFormData(getInitialState())}} className="bg-gray-500 text-white px-6 py-2 rounded flex items-center gap-2 hover:bg-gray-600 transition-colors shadow-md">
             <X size={18}/> Cancelar
