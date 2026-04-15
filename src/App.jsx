@@ -56,7 +56,7 @@ const App = () => {
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
       <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
         <header className="bg-amber-100 text-amber-600 p-6 text-center">
-          <h1 className="text-2xl font-bold uppercase tracking-tighter">Registro de nuevos creyentes</h1>
+          <h1 className="text-2xl font-bold  tracking-tighter">Registro de Nuevos Creyentes</h1>
         </header>
 
         <CreyenteForm 
@@ -65,9 +65,9 @@ const App = () => {
           setEditandoIndex={setEditandoIndex} getInitialState={getInitialState}
         />
 
-        <div className="p-6 bg-gray-50 border-t">
+        <div className="p-6 bg-gray-50 border-t border-amber-400">
           <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
-            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><Users /> Registrados</h2>
+            <h2 className="text-xl font-bold text-amber-600 flex items-center gap-2">⛪ Lista de Registrados</h2>
             <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
           </div>
           
