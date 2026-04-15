@@ -1,24 +1,45 @@
 import { PlusCircle, Heart, Users, Save, X } from 'lucide-react';
-
+import { limpiarSoloLetras, limpiarSoloNumeros, formatearCedula, calcularEdad } from '../utils/validations';
 const CreyenteForm = ({ formData, setFormData, guardarRegistro, editandoIndex, setEditandoIndex, getInitialState }) => {
   
   const handleInputChange = (e) => {
-    const { name, value } = e.target; 
-    let nuevosDatos = { ...formData, [name]: value };   
-    if (name === 'fechaNacimiento' && value) {
-      const hoy = new Date();
-      const cumple = new Date(value);
-      let edadCalculada = hoy.getFullYear() - cumple.getFullYear();
-      const diferenciaMeses = hoy.getMonth() - cumple.getMonth();
-      if (diferenciaMeses < 0 || (diferenciaMeses === 0 && hoy.getDate() < cumple.getDate())) {
-        edadCalculada--;
-      }
-      nuevosDatos.edad = edadCalculada >= 0 ? edadCalculada : 0;
-    }
-    setFormData(nuevosDatos);
-  };
+  const { name, value } = e.target;
+  let valorFinal = value;
 
-  // Clase CSS reutilizable para todos los inputs
+  if (['nombre', 'apellidos', 'profesion'].includes(name)) {
+    const validado = limpiarSoloLetras(value);
+    if (validado === null) return; 
+    valorFinal = validado;
+  }
+
+  if (name === 'telefono') {
+    const validado = limpiarSoloNumeros(value);
+    if (validado === null) return; 
+    valorFinal = validado;
+  }
+
+  if (name === 'cedula') {
+    valorFinal = formatearCedula(value);
+  }
+
+
+  let nuevosDatos = { ...formData, [name]: valorFinal };
+
+  // 4. Lógica de Edad (Mayor de 12 años)
+  if (name === 'fechaNacimiento' && valorFinal) {
+    const res = calcularEdad(valorFinal);
+    if (!res.esValido && valorFinal !== "") {
+      alert("La persona debe ser mayor de 12 años.");
+      nuevosDatos.fechaNacimiento = "";
+      nuevosDatos.edad = "";
+    } else {
+      nuevosDatos.edad = res.edad;
+    }
+  }
+
+  setFormData(nuevosDatos);
+};
+
   const inputStyle = "w-full border border-amber-700 rounded p-2 focus:ring-2 focus:ring-blue-500 outline-none text-sm transition-all";
 
   return (
