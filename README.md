@@ -1,16 +1,40 @@
-# React + Vite
+# ⛪ Sistema de Registro Nuevos Creyentes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema web profesional para la gestión y censo de miembros parroquiales, desarrollado con un enfoque en **Arquitectura de Componentes** y **Clean Code**.
 
-Currently, two official plugins are available:
+## 🚀 Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Validación Estricta de Datos:** Saneamiento de entradas mediante expresiones regulares (RegEx) para garantizar la integridad de la información (nombres, cédulas V/E, teléfonos).
+* **Lógica de Negocio Automatizada:** Cálculo dinámico de edad a partir de la fecha de nacimiento y validación de mayoría de edad (12+ años).
+* **Diseño Responsivo:** Interfaz moderna y adaptativa construida con **Tailwind CSS v4**.
+* **Arquitectura Desacoplada:** Separación de responsabilidades entre componentes de UI y lógica de validación (`utils`).
+* **Persistencia Local:** Gestión de datos mediante `localStorage` para mantener la información tras recargar la página.
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React 18** (Vite como Bundler)
+* **Tailwind CSS v4** (Estilizado avanzado)
+* **Lucide React** (Iconografía)
+* **JavaScript (ES6+)**
 
-## Expanding the ESLint configuration
+## 📂 Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src/
+ ├── components/     # Componentes de interfaz (Form, List, Search)
+ ├── utils/          # Lógica de validación y cálculos (Helper functions)
+ ├── App.jsx         # Orquestador principal de la aplicación
+ └── main.jsx        # Punto de entrada
+
+🔧 Instalación y Uso
+
+    1. Clona el repositorio:
+    git clone [https://github.com/SteffVill/registro-creyentes.git](https://github.com/SteffVill/registro-creyentes.git)
+
+    2. Instala las dependencias:
+    npm install
+
+    3.Inicia el servidor de desarrollo:
+    npm run dev
+
+👤 Autora- Andreina Villalba Ingeniera en Informática Especialista en Desarrollo Web y UI/UX.
